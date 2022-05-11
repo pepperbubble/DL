@@ -5,8 +5,8 @@ import torch.nn.functional as F
 class LeNet(nn.Module):
     def __init__(self):
         super(LeNet, self).__init__()
-        self.conv1 = nn.Conv2d(3, 16, 5)
-        self.pool1 = nn.MaxPool2d(2, 2)
+        self.conv1 = nn.Conv2d(3, 16, 5)# 3: in_channel 16: out_channel 5:kernal_size
+        self.pool1 = nn.MaxPool2d(2, 2)# 2:kernal_size 2:stride
         self.conv2 = nn.Conv2d(16, 32, 5)
         self.pool2 = nn.MaxPool2d(2, 2)
         self.fc1 = nn.Linear(32*5*5, 120)
