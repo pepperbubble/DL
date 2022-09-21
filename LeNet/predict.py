@@ -17,7 +17,7 @@ def main():
     net = LeNet()
     net.load_state_dict(torch.load('Lenet.pth'))
 
-    im = Image.open('ship.jpg')
+    im = Image.open('picture/ship.jpg')
     im = transform(im)  # [C, H, W]
     im = torch.unsqueeze(im, dim=0)  # [N, C, H, W]
 

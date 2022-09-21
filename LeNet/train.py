@@ -8,6 +8,7 @@ import time
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(device)
+
 def main():
 
     transform = transforms.Compose(
@@ -38,8 +39,8 @@ def main():
     loss_function = nn.CrossEntropyLoss()
     optimizer = optim.Adam(net.parameters(), lr=0.001)
 
-    for epoch in range(5):  # loop over the dataset multiple times
-        time_start=time.perf_counter()
+    time_start = time.perf_counter()
+    for epoch in range(10):  # loop over the dataset multiple times
         running_loss = 0.0
         for step, data in enumerate(train_loader, start=0):
             # get the inputs; data is a list of [inputs, labels]
